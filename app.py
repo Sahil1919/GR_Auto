@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify, send_file
 from flask_cors import CORS
-from werkzeug.utils import secure_filename
 import base64
 from rich.progress import track
 from AdharInfo_Extractor import AdharInfo_Extractor
