@@ -1,0 +1,10 @@
+project:
+  name: GR_builder
+  language: python
+  build_command: pip install -r requirements.txt
+  run_command: python app.py
+
+networking:
+  inbound:
+    - protocol: tcp
+      port: 5000
