@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GR Automation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="drag-image">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <h6>Drag & Drop File Here</h6>
+        <span>OR</span>
+        <button>Browse File</button>
+        <input type="file" hidden multiple webkitdirectory />
+      </div>
+    </div>
+    <button type="submit" id="submitButton" class="button">Upload</button>
+    <div id="loadingSpinner" class="spinner">
+      <span class="loading-text">Loading...</span>
+      <span class="loading-icon"></span>
+    </div>
+  </div>
+  
+  <!-- Filename Prompt Modal -->
+  <div id="fileNamePrompt" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter Filename</h5>
+        </div>
+        <div class="modal-body">
+          <form id="fileNameForm">
+            <div class="form-group">
+              <label for="fileNameInput">Filename:</label>
+              <input id="fileNameInput" type="text" class="form-control">
+              <div class="invalid-feedback">Please enter a valid filename.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Download</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='./script.js') }}"></script>
+</body>
+</html>
